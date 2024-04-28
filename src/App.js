@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter,Route, Routes} from 'react-router-dom';
+import ListadoPersonas from './personas/ListadoPersonas';
+import Navegacion from "./commons/Navegacion";
+import AgregarPersona from './personas/AgregarPersona';
+import EditarPersona from './personas/EditarPersona';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className='container'>
+          {/* Agregar un margen superior style={{ marginTop: '30px' }}*/}
+         
+        <BrowserRouter>
+          <Navegacion/>
+          <div style={{ marginTop: '40px' }}>
+            <Routes>
+              <Route exact path='/' element={<ListadoPersonas/>}/>
+              <Route exact path='/agregar' element={<AgregarPersona/>}/>
+              <Route exact path='/editar/:id' element={<EditarPersona/>}/>
+            </Routes>
+            </div>
+        </BrowserRouter>
+   
+      </div>
+
+    </>
   );
 }
 
