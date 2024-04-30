@@ -77,6 +77,8 @@ export default function Agregarpersona() {
                       <label htmlFor="dni" className="form-label">DNI</label>
                       <input type="text" className="form-control"
                         id="dni" name="dni" required={true}
+                        pattern="[0-9]*"
+                        title="El DNI solo debe contener números" 
                         value={dni} onChange={(e) => onInputChange(e)} />
                     </div>
                   </div>
