@@ -36,7 +36,7 @@ export default function EditarPersona() {
         nombre: data.nombre,
         apellido: data.apellido,
         fecha_nacimiento: fechaNacimientoFormateada,
-        dni: data.dni,
+        nroDocumento: data.nroDocumento,
         tipoDocumento: data.tipoDocumento
       });
     } catch (error) {
@@ -64,7 +64,7 @@ export default function EditarPersona() {
     }
   };
 
-  const { nombre, apellido, fecha_nacimiento, dni, tipoDocumento } = persona;
+  const { nombre, apellido, fecha_nacimiento, nroDocumento, tipoDocumento } = persona;
 
   return (
     <>
@@ -92,10 +92,12 @@ export default function EditarPersona() {
               </div>
               <div className="col-md-4">
                 <div className="mb-3">
-                  <label htmlFor="dni" className="form-label">DNI</label>
+                  <label htmlFor="nroDocumento" className="form-label">DNI</label>
                   <input type="text" className="form-control"
-                    id="dni" name="dni"
-                    value={dni} onChange={(e) => onInputChange(e)} />
+                    id="nroDocumento" name="nroDocumento"
+                    pattern="[0-9]*"
+                    title="El DNI solo debe contener números" 
+                    value={nroDocumento} onChange={(e) => onInputChange(e)} />
                 </div>
               </div>
             </div>

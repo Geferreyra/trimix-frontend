@@ -12,13 +12,13 @@ export default function Agregarpersona() {
       "nombre": "",
       "apellido": "",
       "fecha_nacimiento": "",
-      "dni": "",
+      "nroDocumento": "",
       "tipoDocumento": ""
     });
 
     const [showAlert, setShowAlert] = useState(false); 
   
-    const { nombre, apellido, fecha_nacimiento, dni, tipoDocumento } = persona;
+    const { nombre, apellido, fecha_nacimiento, nroDocumento, tipoDocumento } = persona;
   
     const onInputChange = (e) => {
       setpersona({ ...persona, [e.target.name]: e.target.value });
@@ -27,7 +27,7 @@ export default function Agregarpersona() {
     const onSubmit = async (e) => {
       e.preventDefault();
           
-          if (nombre === "" || apellido === "" || fecha_nacimiento === "" || dni === "" || tipoDocumento === "") {
+          if (nombre === "" || apellido === "" || fecha_nacimiento === "" || nroDocumento === "" || tipoDocumento === "") {
             setShowAlert(true); 
             return; 
           }
@@ -74,10 +74,12 @@ export default function Agregarpersona() {
                   </div>
                   <div className="col-md-4">
                     <div className="mb-3">
-                      <label htmlFor="dni" className="form-label">DNI</label>
+                      <label htmlFor="nroDocumento" className="form-label">DNI</label>
                       <input type="text" className="form-control"
-                        id="dni" name="dni" required={true}
-                        value={dni} onChange={(e) => onInputChange(e)} />
+                        id="nroDocumento" name="nroDocumento" required={true}
+                        pattern="[0-9]*"
+                        title="El DNI solo debe contener números" 
+                        value={nroDocumento} onChange={(e) => onInputChange(e)} />
                     </div>
                   </div>
                 </div>

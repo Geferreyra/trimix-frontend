@@ -124,7 +124,7 @@ export default function ListadoPersonas() {
                   <td>{persona.tipoDocumento}</td>
                   <td>
                     <NumericFormat
-                      value={persona.dni}
+                      value={persona.nroDocumento}
                       displayType={'text'}
                       thousandSeparator=''
                       decimalScale={0}
