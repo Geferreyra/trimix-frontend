@@ -60,8 +60,8 @@ export default function PanelFiltros({ onFiltrarPorTipoDocumento, onFiltrarPorNo
                     <FontAwesomeIcon icon={faBars} style={{ marginRight: '0.5rem' }}/>  Filtros de busqueda
                   
                 </button>
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
+                <div className="collapse" id="collapseExample">
+                    <div className="card card-body">
                         Para un buen funcionamiento  es necesario utilizar el boton 'Limpiar' antes de una nueva busqueda.
                     </div>
                 </div>

@@ -3,6 +3,7 @@ import ListadoPersonas from './personas/ListadoPersonas';
 import Navegacion from "./commons/Navegacion";
 import AgregarPersona from './personas/AgregarPersona';
 import EditarPersona from './personas/EditarPersona';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
